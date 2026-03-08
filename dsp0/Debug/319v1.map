@@ -1,0 +1,1393 @@
+******************************************************************************
+               TMS320C6x Linker PC v7.4.4                      
+******************************************************************************
+>> Linked Fri Nov 23 10:28:38 2018
+
+OUTPUT FILE NAME:   <319v1.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 10800200
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  CORE0_SL2_DATA        0c000000   00008000  00000ccc  00007334  RWIX
+  CORE1_SL2_DATA        0c008000   00008000  00008000  00000000  RWIX
+  CORE2_SL2_DATA        0c010000   00008000  00000000  00008000  RWIX
+  CORE3_SL2_DATA        0c018000   00008000  00000000  00008000  RWIX
+  CORE4_SL2_DATA        0c020000   00008000  00000000  00008000  RWIX
+  CORE5_SL2_DATA        0c028000   00008000  00000000  00008000  RWIX
+  CORE6_SL2_DATA        0c030000   00008000  00000000  00008000  RWIX
+  CORE7_SL2_DATA        0c038000   00008000  00000000  00008000  RWIX
+  SL2_IMAGE             0c040000   00280000  00235c38  0004a3c8  RWIX
+  SL2_RES               0c2c0000   00010000  00000000  00010000  RWIX
+  SL2_RES0              0c2d0000   00010000  00000000  00010000  RWIX
+  SL2_RES1              0c2e0000   00010000  00000080  0000ff80  RWIX
+  SL2_CODE              0c2f0000   00010000  00000000  00010000  RWIX
+  SL2_RES2              0c300000   000ff000  00000000  000ff000  RWIX
+  CORE0_VECTORS         10800000   00000200  00000200  00000000  RWIX
+  BOOT_CORE0            10800200   000000c0  00000080  00000040  RWIX
+  CORE0_LL2_CODE        108002c0   0003fd40  0001b880  000244c0  RWIX
+  CORE0_LL2_DATA        10840000   00040000  0001930e  00026cf2  RWIX
+  CORE0_L1P_SRAM        10e00000   00008000  00000000  00008000  RWIX
+  CORE0_L1D_SRAM        10f00000   00008000  00000000  00008000  RWIX
+  CORE1_VECTORS         11800000   00000200  00000000  00000200  RWIX
+  BOOT_CORE1            11800200   000000c0  00000000  000000c0  RWIX
+  CORE1_LL2_CODE        118002c0   0001fd40  00000000  0001fd40  RWIX
+  CORE1_LL2_DATA        11820000   00060000  00000000  00060000  RWIX
+  CORE1_L1P_SRAM        11e00000   00008000  00000000  00008000  RWIX
+  CORE1_L1D_SRAM        11f00000   00008000  00000000  00008000  RWIX
+  CORE2_VECTORS         12800000   00000200  00000000  00000200  RWIX
+  BOOT_CORE2            12800200   000000c0  00000000  000000c0  RWIX
+  CORE2_LL2_CODE        128002c0   0001fd40  00000000  0001fd40  RWIX
+  CORE2_LL2_DATA        12820000   00060000  00000000  00060000  RWIX
+  CORE2_L1P_SRAM        12e00000   00008000  00000000  00008000  RWIX
+  CORE2_L1D_SRAM        12f00000   00008000  00000000  00008000  RWIX
+  CORE3_VECTORS         13800000   00000200  00000000  00000200  RWIX
+  BOOT_CORE3            13800200   000000c0  00000000  000000c0  RWIX
+  CORE3_LL2_CODE        138002c0   0001fd40  00000000  0001fd40  RWIX
+  CORE3_LL2_DATA        13820000   00060000  00000000  00060000  RWIX
+  CORE3_L1P_SRAM        13e00000   00008000  00000000  00008000  RWIX
+  CORE3_L1D_SRAM        13f00000   00008000  00000000  00008000  RWIX
+  CORE4_VECTORS         14800000   00000200  00000000  00000200  RWIX
+  BOOT_CORE4            14800200   000000c0  00000000  000000c0  RWIX
+  CORE4_LL2_CODE        148002c0   0001fd40  00000000  0001fd40  RWIX
+  CORE4_LL2_DATA        14820000   00060000  00000000  00060000  RWIX
+  CORE4_L1P_SRAM        14e00000   00008000  00000000  00008000  RWIX
+  CORE4_L1D_SRAM        14f00000   00008000  00000000  00008000  RWIX
+  CORE5_VECTORS         15800000   00000200  00000000  00000200  RWIX
+  BOOT_CORE5            15800200   000000c0  00000000  000000c0  RWIX
+  CORE5_LL2_CODE        158002c0   0001fd40  00000000  0001fd40  RWIX
+  CORE5_LL2_DATA        15820000   00060000  00000000  00060000  RWIX
+  CORE5_L1P_SRAM        15e00000   00008000  00000000  00008000  RWIX
+  CORE5_L1D_SRAM        15f00000   00008000  00000000  00008000  RWIX
+  CORE6_VECTORS         16800000   00000200  00000000  00000200  RWIX
+  BOOT_CORE6            16800200   000000c0  00000000  000000c0  RWIX
+  CORE6_LL2_CODE        168002c0   0001fd40  00000000  0001fd40  RWIX
+  CORE6_LL2_DATA        16820000   00060000  00000000  00060000  RWIX
+  CORE6_L1P_SRAM        16e00000   00008000  00000000  00008000  RWIX
+  CORE6_L1D_SRAM        16f00000   00008000  00000000  00008000  RWIX
+  CORE7_VECTORS         17800000   00000200  00000000  00000200  RWIX
+  BOOT_CORE7            17800200   000000c0  00000000  000000c0  RWIX
+  CORE7_LL2_CODE        178002c0   0001fd40  00000000  0001fd40  RWIX
+  CORE7_LL2_DATA        17820000   00060000  00000000  00060000  RWIX
+  CORE7_L1P_SRAM        17e00000   00008000  00000000  00008000  RWIX
+  CORE7_L1D_SRAM        17f00000   00008000  00000000  00008000  RWIX
+  SL2_REMAP             18000000   00001000  00000000  00001000  RWIX
+  EMIF16_CS2            70000000   04000000  00000000  04000000  RWIX
+  EMIF16_CS3            74000000   04000000  00000000  04000000  RWIX
+  EMIF16_CS4            78000000   04000000  00000000  04000000  RWIX
+  EMIF16_CS5            7c000000   04000000  00000000  04000000  RWIX
+  DDR3_CODE             81000000   01000000  00000000  01000000  RWIX
+  DDR3_DATA             82000000   04000000  00000000  04000000  RWIX
+  DDR3_RES              89000000   07000000  00000000  07000000  RWIX
+  CORE0_DDR3_Descriptor 90000000   00040000  00000000  00040000  RWIX
+  CORE0_DDR3_PBUF       90040000   0ffc0000  00000000  0ffc0000  RWIX
+  CORE1_DDR3_Descriptor a0000000   00008000  00000000  00008000  RWIX
+  CORE1_DDR3_PBUF       a0008000   0fff8000  00000000  0fff8000  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+0c000000    0c000000    00000ccc   00000ccc    r--
+  0c000000    0c000000    000007f8   000007f8    r-- .const
+  0c0007f8    0c0007f8    000004d4   000004d4    r-- .cinit
+0c008000    0c008000    00008000   00000000    rw-
+  0c008000    0c008000    00008000   00000000    rw- core0_Data.SL2
+0c040000    0c040000    00235c38   00000000    rw-
+  0c040000    0c040000    00235c38   00000000    rw- ImageData.SL2
+0c2e0000    0c2e0000    00000080   00000000    rw-
+  0c2e0000    0c2e0000    00000080   00000000    rw- .sync
+10800000    10800000    00000280   00000280    r-x
+  10800000    10800000    00000200   00000200    r-x vecs
+  10800200    10800200    00000080   00000080    r-x .myboot
+108002c0    108002c0    0001b880   0001b880    r-x
+  108002c0    108002c0    0001b440   0001b440    r-x .text
+  1081b700    1081b700    00000440   00000440    r-x .text:Core_MPAX
+10840000    10840000    00018000   00010000    rw-
+  10840000    10840000    00010000   00010000    rw- .stack
+  10850000    10850000    00008000   00000000    rw- .sysmem
+10858000    10858000    000011ee   00001148    rw-
+  10858000    10858000    00000a08   00000a08    rw- .far
+  10858a08    10858a08    00000418   00000418    rw- .fardata
+  10858e20    10858e20    00000328   00000328    rw- .neardata
+  10859148    10859148    000000a6   00000000    rw- .bss
+108591f0    108591f0    00000120   00000000    rw-
+  108591f0    108591f0    00000120   00000000    rw- .cio
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.const     0    0c000000    000007f8     
+                  0c000000    00000348     dsp0_common.obj (.const:.string)
+                  0c000348    00000190     peripheral.obj (.const:.string)
+                  0c0004d8    00000108     EMIF16_Init.obj (.const:.string)
+                  0c0005e0    00000101     rts6600_elf.lib : ctype.obj (.const:.string:_ctypes_)
+                  0c0006e1    00000002                     : fputs.obj (.const:.string)
+                  0c0006e3    00000001     --HOLE-- [fill = 0]
+                  0c0006e4    00000074     interrupt.obj (.const:.string)
+                  0c000758    0000004c     DDR_Init.obj (.const:.string)
+                  0c0007a4    00000023     rts6600_elf.lib : _printfi.obj (.const:.string)
+                  0c0007c7    00000001     --HOLE-- [fill = 0]
+                  0c0007c8    00000020     dsp0_core0.obj (.const:.string)
+                  0c0007e8    00000010     dsp0_mss.obj (.const:.string)
+
+.cinit     0    0c0007f8    000004d4     
+                  0c0007f8    000002aa     (.cinit..neardata.load) [load image, compression = rle]
+                  0c000aa2    00000002     --HOLE-- [fill = 0]
+                  0c000aa4    0000010c     (.cinit..fardata.load) [load image, compression = rle]
+                  0c000bb0    000000b6     (.cinit..far.load) [load image, compression = rle]
+                  0c000c66    00000002     --HOLE-- [fill = 0]
+                  0c000c68    0000000c     (__TI_handler_table)
+                  0c000c74    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  0c000c7c    00000008     (.cinit..sync.load) [load image, compression = zero_init]
+                  0c000c84    00000008     (.cinit.ImageData.SL2.load) [load image, compression = zero_init]
+                  0c000c8c    00000008     (.cinit.core0_Data.SL2.load) [load image, compression = zero_init]
+                  0c000c94    00000038     (__TI_cinit_table)
+
+core0_Data.SL2 
+*          0    0c008000    00008000     UNINITIALIZED
+                  0c008000    00008000     dsp0_image.obj (core0_Data.SL2)
+
+ImageData.SL2 
+*          0    0c040000    00235c38     UNINITIALIZED
+                  0c040000    00235c38     dsp0_imagefunc.obj (ImageData.SL2)
+
+.sync      0    0c2e0000    00000080     UNINITIALIZED
+                  0c2e0000    00000080     interrupt.obj (.sync)
+
+vecs       0    10800000    00000200     
+                  10800000    00000200     interrupt_vectors.obj (vecs)
+
+.myboot    0    10800200    00000080     
+                  10800200    00000080     rts6600_elf.lib : boot.obj (.text:_c_int00)
+
+.text      0    108002c0    0001b440     
+                  108002c0    0000e360     dsp0_image.obj (.text)
+                  1080e620    00001cc0     dsp0_common.obj (.text)
+                  108102e0    00000ee0     interrupt.obj (.text:retain)
+                  108111c0    00000c80     KeyStone_HyperLink_Init.obj (.text)
+                  10811e40    000007e0     Serdes_init.obj (.text)
+                  10812620    000006a0     peripheral.obj (.text)
+                  10812cc0    00000660     dsp0_mss.obj (.text)
+                  10813320    000005e0     interrupt.obj (.text)
+                  10813900    000005c0     rts6600_elf.lib : divd.obj (.text:__c6xabi_divd)
+                  10813ec0    000005c0                     : _printfi.obj (.text:_getarg_diouxp)
+                  10814480    000004a0     DDR_Init.obj (.text)
+                  10814920    00000460     dsp0_image.obj (.text:Pre_BKForecast)
+                  10814d80    00000460     rts6600_elf.lib : _printfi.obj (.text:_printfi)
+                  108151e0    00000460                     : _printfi.obj (.text:_setfield)
+                  10815640    000003c0     EMIF16_Init.obj (.text)
+                  10815a00    000003a0     rts6600_elf.lib : fputs.obj (.text:fputs)
+                  10815da0    000003a0     dsp0_common.obj (.text:retain)
+                  10816140    00000320     rts6600_elf.lib : _printfi.obj (.text:_pproc_fge)
+                  10816460    000002e0                     : _printfi.obj (.text:_pproc_fwp)
+                  10816740    000002a0                     : _printfi.obj (.text:fcvt)
+                  108169e0    00000280     dsp0_image.obj (.text:Pre_IntermFilter)
+                  10816c60    00000280     rts6600_elf.lib : divf.obj (.text:__c6xabi_divf)
+                  10816ee0    00000280                     : _printfi.obj (.text:ecvt)
+                  10817160    00000280                     : memory.obj (.text:free)
+                  108173e0    00000260     dsp0_imagefunc.obj (.text)
+                  10817640    00000240     rts6600_elf.lib : imath64.obj (.text:__c6xabi_divull)
+                  10817880    00000240                     : _printfi.obj (.text:_pconv_e)
+                  10817ac0    00000240                     : _printfi.obj (.text:_pproc_diouxp)
+                  10817d00    00000220                     : _printfi.obj (.text:_pproc_str)
+                  10817f20    00000220                     : fputc.obj (.text:fputc)
+                  10818140    00000200                     : _printfi.obj (.text:_pconv_g)
+                  10818340    00000200                     : setvbuf.obj (.text:setvbuf)
+                  10818540    000001c0                     : _printfi.obj (.text:_mcpy)
+                  10818700    000001a0                     : trgdrv.obj (.text:HOSTrename)
+                  108188a0    000001a0                     : imath40.obj (.text:__c6xabi_divul)
+                  10818a40    00000180                     : copy_decompress_rle.obj (.text:__TI_decompress_rle_core)
+                  10818bc0    00000180                     : memory.obj (.text:malloc)
+                  10818d40    00000160                     : sqrt.obj (.text:sqrt)
+                  10818ea0    00000140                     : _printfi.obj (.text:_pproc_fflags)
+                  10818fe0    00000140                     : lowlev.obj (.text:getdevice)
+                  10819120    00000120                     : fclose.obj (.text:_closefile)
+                  10819240    00000120                     : _printfi.obj (.text:_ltostr)
+                  10819360    00000120                     : fseek.obj (.text:fseek)
+                  10819480    00000100                     : trgdrv.obj (.text:HOSTlseek)
+                  10819580    00000100                     : autoinit.obj (.text:_auto_init_elf)
+                  10819680    00000100                     : _io_perm.obj (.text:_wrt_ok)
+                  10819780    00000100                     : cpy_tbl.obj (.text:copy_in)
+                  10819880    000000e0     dsp0_image.obj (.text:AcquireData5)
+                  10819960    000000e0     rts6600_elf.lib : trgdrv.obj (.text:HOSTopen)
+                  10819a40    000000e0                     : divi.obj (.text:__divi)
+                  10819b20    000000e0                     : _printfi.obj (.text:_div)
+                  10819c00    000000e0                     : atoi.obj (.text:atoi)
+                  10819ce0    000000e0                     : lowlev.obj (.text:close)
+                  10819dc0    000000e0                     : copy_zero_init.obj (.text:decompress:ZI:__TI_zero_init)
+                  10819ea0    000000e0                     : ltoa.obj (.text:ltoa)
+                  10819f80    000000e0                     : memset.obj (.text:memset)
+                  1081a060    000000e0                     : printf.obj (.text:printf)
+                  1081a140    000000c0                     : trgdrv.obj (.text:HOSTread)
+                  1081a200    000000c0                     : trgdrv.obj (.text:HOSTunlink)
+                  1081a2c0    000000c0                     : trgdrv.obj (.text:HOSTwrite)
+                  1081a380    000000c0                     : divu.obj (.text:__divu)
+                  1081a440    000000c0                     : remi.obj (.text:__remi)
+                  1081a500    000000c0                     : fflush.obj (.text:_doflush)
+                  1081a5c0    000000c0                     : exit.obj (.text:exit)
+                  1081a680    000000c0                     : tls.obj (.text:tls:init:__TI_tls_init)
+                  1081a740    000000a0                     : trgdrv.obj (.text:HOSTclose)
+                  1081a7e0    000000a0                     : remu.obj (.text:__remu)
+                  1081a880    000000a0                     : fopen.obj (.text:_cleanup)
+                  1081a920    000000a0                     : _printfi.obj (.text:_ecpy)
+                  1081a9c0    000000a0                     : _printfi.obj (.text:_fcpy)
+                  1081aa60    000000a0                     : memory.obj (.text:_minit)
+                  1081ab00    000000a0                     : _printfi.obj (.text:_pconv_f)
+                  1081aba0    000000a0                     : lowlev.obj (.text:finddevice)
+                  1081ac40    000000a0                     : lowlev.obj (.text:lseek)
+                  1081ace0    000000a0                     : memcpy64.obj (.text:memcpy)
+                  1081ad80    000000a0                     : memory.obj (.text:minsert)
+                  1081ae20    000000a0                     : memory.obj (.text:mremove)
+                  1081aec0    000000a0                     : lowlev.obj (.text:write)
+                  1081af60    00000080                     : fixfu.obj (.text:__c6xabi_fixfu)
+                  1081afe0    00000080                     : llshift.obj (.text:__c6xabi_llshl)
+                  1081b060    00000080     dsp0_core0.obj (.text)
+                  1081b0e0    00000080     rts6600_elf.lib : trgmsg.obj (.text:readmsg)
+                  1081b160    00000080                     : lowlev.obj (.text:unlink)
+                  1081b1e0    00000060                     : cpp_init.obj (.text:__TI_cpp_init)
+                  1081b240    00000060                     : frcmpyd_div.obj (.text:__c6xabi_frcmpyd_div)
+                  1081b2a0    00000060                     : llshift.obj (.text:__c6xabi_llshru)
+                  1081b300    00000060                     : imath64.obj (.text:_subcull)
+                  1081b360    00000060                     : memccpy.obj (.text:memccpy)
+                  1081b3c0    00000060                     : trgmsg.obj (.text:writemsg)
+                  1081b420    00000040                     : isinf.obj (.text:__c6xabi_isinf)
+                  1081b460    00000040                     : _printfi.obj (.text:__c6xabi_isnan)
+                  1081b4a0    00000040                     : strasg.obj (.text:__strasgi_64plus)
+                  1081b4e0    00000040                     : args_main.obj (.text:_args_main)
+                  1081b520    00000040     dsp0_msu.obj (.text)
+                  1081b560    00000040     interrupt_vectors.obj (.text)
+                  1081b5a0    00000040     rts6600_elf.lib : fputs.obj (.text:puts)
+                  1081b5e0    00000020                     : errno.obj (.text:__c6xabi_errno_addr)
+                  1081b600    00000020                     : negll.obj (.text:__c6xabi_negll)
+                  1081b620    00000020                     : _lock.obj (.text:_nop)
+                  1081b640    00000020                     : printf.obj (.text:_outc)
+                  1081b660    00000020                     : printf.obj (.text:_outs)
+                  1081b680    00000020                     : exit.obj (.text:abort)
+                  1081b6a0    00000020                     : copy_decompress_none.obj (.text:decompress:none:__TI_decompress_none)
+                  1081b6c0    00000020                     : copy_decompress_rle.obj (.text:decompress:rle24:__TI_decompress_rle24)
+                  1081b6e0    00000020     dsp0_main.obj (.text)
+
+.text:Core_MPAX 
+*          0    1081b700    00000440     
+                  1081b700    00000440     dsp0_common.obj (.text:Core_MPAX)
+
+.stack     0    10840000    00010000     
+                  10840000    00000008     rts6600_elf.lib : boot.obj (.stack) [fill = bfbfbfbf]
+                  10840008    0000fff8     --HOLE-- [fill = bfbfbfbf]
+
+.sysmem    0    10850000    00008000     UNINITIALIZED
+                  10850000    00000008     rts6600_elf.lib : memory.obj (.sysmem)
+                  10850008    00007ff8     --HOLE--
+
+.far       0    10858000    00000a08     
+                  10858000    00000418     KeyStone_HyperLink_Init.obj (.far:HyperLinkInit) [fill = 0]
+                  10858418    00000220     dsp0_image.obj (.far) [fill = 0]
+                  10858638    00000140     rts6600_elf.lib : defs.obj (.far) [fill = 0]
+                  10858778    00000100     peripheral.obj (.far:testBuf) [fill = 0]
+                  10858878    000000b0     dsp0_mss.obj (.far:Core_MPAX)
+                  10858928    0000006c     dsp0_common.obj (.far) [fill = 0]
+                  10858994    00000038     peripheral.obj (.far) [fill = 0]
+                  108589cc    00000004     --HOLE--
+                  108589d0    00000010     DDR_Init.obj (.far:Core_MPAX)
+                  108589e0    00000010     dsp0_common.obj (.far:Core_MPAX)
+                  108589f0    00000010     dsp0_imagefunc.obj (.far) [fill = 0]
+                  10858a00    00000008     rts6600_elf.lib : trgdrv.obj (.far) [fill = 0]
+
+.fardata   0    10858a08    00000418     
+                  10858a08    000001e0     rts6600_elf.lib : defs.obj (.fardata:_ftable)
+                  10858be8    000000a0                     : lowlev.obj (.fardata:_stream)
+                  10858c88    00000078                     : lowlev.obj (.fardata:_device)
+                  10858d00    0000005c     peripheral.obj (.fardata)
+                  10858d5c    00000004     rts6600_elf.lib : defs.obj (.fardata)
+                  10858d60    00000028     dsp0_common.obj (.fardata:gpEDMA_TC_regs)
+                  10858d88    00000020     dsp0_common.obj (.fardata:gCIC_EXC_EN_MASK)
+                  10858da8    00000020     interrupt.obj (.fardata:iIPCARInfo)
+                  10858dc8    00000020     interrupt.obj (.fardata:iIPCGRInfo)
+                  10858de8    0000000c     dsp0_common.obj (.fardata:gpEDMA_CC_regs)
+                  10858df4    0000000c     rts6600_elf.lib : exit.obj (.fardata)
+                  10858e00    0000000c                     : memory.obj (.fardata)
+                  10858e0c    00000008                     : _lock.obj (.fardata)
+                  10858e14    00000004                     : errno.obj (.fardata)
+                  10858e18    00000008     peripheral.obj (.fardata:uiDataPatternTable)
+
+.neardata 
+*          0    10858e20    00000328     
+                  10858e20    00000210     dsp0_image.obj (.neardata)
+                  10859030    000000a4     dsp0_common.obj (.neardata)
+                  108590d4    00000050     interrupt.obj (.neardata)
+                  10859124    00000016     dsp0_test.obj (.neardata)
+                  1085913a    00000002     --HOLE-- [fill = 0]
+                  1085913c    00000004     EMIF16_Init.obj (.neardata)
+                  10859140    00000004     KeyStone_HyperLink_Init.obj (.neardata)
+                  10859144    00000004     SRIO_Init_drv.obj (.neardata)
+
+.rodata    0    10859148    00000000     UNINITIALIZED
+
+.bss       0    10859148    000000a6     UNINITIALIZED
+                  10859148    00000098     dsp0_image.obj (.bss)
+                  108591e0    00000004     KeyStone_HyperLink_Init.obj (.bss)
+                  108591e4    00000004     dsp0_imagefunc.obj (.bss)
+                  108591e8    00000004     peripheral.obj (.bss)
+                  108591ec    00000002     interrupt.obj (.bss)
+
+.cio       0    108591f0    00000120     UNINITIALIZED
+                  108591f0    00000120     rts6600_elf.lib : trgmsg.obj (.cio)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0c000c94 records: 7, size/record: 8, table size: 56
+	.neardata: load addr=0c0007f8, load size=000002aa bytes, run addr=10858e20, run size=00000328 bytes, compression=rle
+	.fardata: load addr=0c000aa4, load size=0000010c bytes, run addr=10858a08, run size=00000418 bytes, compression=rle
+	.far: load addr=0c000bb0, load size=000000b6 bytes, run addr=10858000, run size=00000a08 bytes, compression=rle
+	.bss: load addr=0c000c74, load size=00000008 bytes, run addr=10859148, run size=000000a6 bytes, compression=zero_init
+	.sync: load addr=0c000c7c, load size=00000008 bytes, run addr=0c2e0000, run size=00000080 bytes, compression=zero_init
+	ImageData.SL2: load addr=0c000c84, load size=00000008 bytes, run addr=0c040000, run size=00235c38 bytes, compression=zero_init
+	core0_Data.SL2: load addr=0c000c8c, load size=00000008 bytes, run addr=0c008000, run size=00008000 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0c000c68 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+10819880   AcquireData5
+1081b680   C$$EXIT
+1081b418   C$$IO$$
+10859178   CheckCycles
+10859164   CommandMode
+1081b060   Core0_Image
+1080ea54   Core_PLL_init
+10814480   DDR3_registers_adress_map
+10859129   DDR3_temperatureflag
+10859126   DDR3_temperatureflag1
+108144f4   DDR_Config_Init
+1080ef44   DDR_PLL_init
+108589d0   DDR_REGS_MPAX_cfg_table_319
+10814898   DDR_init
+108126d0   DSP0_GPIO_init
+1080e488   DSP0_image
+10859160   Debug_WorkMode
+108590f8   DoorbellNum
+108590fc   DoorbellNum1
+10859100   DoorbellNum2
+10859104   DoorbellNum3
+10859108   DoorbellNum4
+1080f788   EDMA_copy_Type3
+1080f224   EDMA_init
+1085913c   EMIF16_Regs
+10815640   EMIF16_init
+10812708   EMIF_init
+10815da0   Exception_service_routine
+10812a30   FLASH_MEM_FillTest
+10812af0   FLASH_MEM_Test
+108585f8   FPGACheck
+10858618   FPGAChecklast
+10801150   FPGA_EMIF16_RTX
+108002e8   FPGA_EMIF16_RTX1
+10801df8   FPGA_EMIF16_RTX2
+10812c34   GPIO_FPGA_Handshake
+10810f34   GPIO_ISR
+10813754   GPIO_Interrupts_Init
+1085910c   GPIO_NUM0
+10859110   GPIO_NUM1
+10859114   GPIO_NUM2
+10859118   GPIO_NUM3
+1085911c   GPIO_NUM4
+10859120   GPIO_NUM5
+1085912a   GPIO_temperatureflag
+10817540   GetMaxValue
+108175b8   GetMinValue
+1081a740   HOSTclose
+10819480   HOSTlseek
+10819960   HOSTopen
+1081a140   HOSTread
+10818700   HOSTrename
+1081a200   HOSTunlink
+1081a2c0   HOSTwrite
+0c220000   Hist
+0c230000   Hist_a
+0c240000   Hist_b
+10810d30   HyperLinkISR
+10811c98   HyperLink_Int_Handle
+10811ba0   HyperLink_Interrupt_Test
+10811bf0   HyperLink_TX2_DSP1
+10811de8   HyperLink_init
+108117e4   Hyperlink_config
+1080f924   IDMA_copy
+108102e0   IPC_ACT_ISR
+0c0e0000   ImageDataTemp1_5
+0c180000   ImageDataTemp2_5
+0c040000   ImageData_5
+10812ca4   Interface_test
+10858e84   K1_Compensate1
+10858ea4   K1_Compensate3
+10858e80   K1_Fcha
+10858e90   K1_Fcha4
+10858e7c   K1_Mean
+10858e8c   K1_Mean4
+10858e48   K1st_Fcha
+10858e58   K1st_Fcha1
+10858e44   K1st_Mean
+10858e54   K1st_Mean1
+10858e88   K2_Fcha
+10858e28   K4_scan
+10858e30   K4_scan1
+10858e34   K4_scan1con
+10858e2c   K4_track
+10858e24   KKK
+10858e20   Kconstant
+1080fe00   KeyStone_CIC_exception_events_mapping
+108100b4   KeyStone_Exception_cfg
+1081154c   KeyStone_HyperLink_Addr_Map
+10811640   KeyStone_HyperLink_Init
+108113a4   KeyStone_HyperLink_Interrupt_init
+10812300   KeyStone_HyperLink_Serdes_init
+1080eeb4   KeyStone_PASS_PLL_init
+1080fc34   KeyStone_SL2_EDC_enable
+1080faf4   L1D_memory_protection_cfg
+1080fd84   L1P_EDC_setup
+1080fa64   L1P_memory_protection_cfg
+1080f9c0   L1_MPPA_setup
+1080fb88   L1_cache_protection
+1080fcf0   LL2_EDC_setup
+1080fb98   LL2_MPPA_setup
+1081b890   MPAX_seg_setup
+1081b520   MSU_Image
+0c25bb80   Mark4
+0c250000   Mark4Con
+10858e38   MultiM2
+10813044   MulticoreBoot
+10858e3c   Multiply1
+10858e40   Multiply2
+10812bcc   NOR_FLASH_test
+108129f0   NOR_FLASH_write_block
+108127d0   NOR_init
+10812818   NOR_writeBytes
+108021ec   OBJ_Detect1st
+10803254   OBJ_Detect1stmax
+10804344   OBJ_Detect1stmaxv1
+10805424   OBJ_Detect1stmaxv1rev
+10806510   OBJ_Detect1stmaxv2
+10807250   OBJ_Detect1stmaxv3
+108080d0   OBJ_Detect1stmaxv4
+10808fa4   OBJ_Detect1stmaxv5
+1080a234   OBJ_Detect2nd
+1080a7e4   OBJ_Detect2nd1
+1080ae60   OBJ_Detect2nd2
+1080b444   OBJ_Detect2nd3
+1080bc80   OBJ_Detect2nd4
+10809eac   OBJ_Detect2ndOut
+1080c598   OBJ_Synthesis
+1080ed98   PLL_init
+10814920   Pre_BKForecast
+10802084   Pre_DataMove
+10809dc4   Pre_DataMove2
+108173e0   Pre_Hist
+108169e0   Pre_IntermFilter
+10858fb4   RXanglelast
+10858fbc   RXanglelast1
+10858fd4   RXanglelcnt
+10858fd8   RXanglercnt
+10858fe4   RXcenter
+10858fe0   RYanglebcnt
+10858fb8   RYanglelast
+10858fc0   RYanglelast1
+10858fdc   RYangletcnt
+10858fe8   RYcenter
+10858fec   Rposition
+10859168   RxFrameFlag
+10810868   SRIO_Doorbell_ISR
+10812c58   SRIO_FPGA_Handshake
+10812064   SRIO_Serdes_init
+1085912c   SRIO_nodoorbellcount
+10859124   SRIO_temperatureflag1
+10859125   SRIO_temperatureflag2
+10859127   SRIOflag1
+10859128   SRIOflag2
+0c266238   Scan5error
+0c26df38   Scan5error1
+10859018   Scan5errorcnt
+10859010   Scan5errornum
+10859014   Scan5errornum1
+0c25e538   Scan5record
+0c25e038   ScanCheck5
+10859150   ScanCheck5Num
+0c25e2b8   ScanCheck5last
+10859152   ScanCheck5lastNum
+1085917c   ScanCheckflag
+0c2e0000   SemaphoreSyncMark
+10811e68   Serdes_PLL_config
+108125a8   Serdes_disable
+10859170   SmallFlag
+1080efe0   TSC_delay_ms
+1080f078   TSC_delay_us
+1080efd0   TSC_init
+108591bc   TempCorRmax
+10858e50   TotalFcha
+10858e4c   TotalMean
+10859190   TrackM1
+10859194   TrackM2
+10859198   TrackM2Flag
+1085919c   TrackM3
+1085918c   TrackMethod
+1085916c   WorkMode
+10858878   XMC_MPAX_cfg_table_C6678_319
+1081ba34   XMC_MPAX_setup
+108591f0   __CIOBUF_
+0c000c94   __TI_CINIT_Base
+0c000ccc   __TI_CINIT_Limit
+0c000c68   __TI_Handler_Table_Base
+0c000c74   __TI_Handler_Table_Limit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+10850000   __TI_STACK_END
+00010000   __TI_STACK_SIZE
+10858e20   __TI_STATIC_BASE
+00008000   __TI_SYSMEM_SIZE
+UNDEFED    __TI_TLS_INIT_Base
+UNDEFED    __TI_TLS_INIT_Limit
+00000001   __TI_args_main
+1081b1e0   __TI_cpp_init
+1081b6a0   __TI_decompress_none
+1081b6c0   __TI_decompress_rle24
+10858dfc   __TI_enable_exit_profile_output
+ffffffff   __TI_pprof_out_hndl
+ffffffff   __TI_prof_data_size
+ffffffff   __TI_prof_data_start
+1081a680   __TI_tls_init
+10819dc0   __TI_zero_init
+ffffffff   __binit__
+10813900   __c6xabi_divd
+10816c60   __c6xabi_divf
+10819a40   __c6xabi_divi
+1081a380   __c6xabi_divu
+108188a0   __c6xabi_divul
+10817640   __c6xabi_divull
+1081b5e0   __c6xabi_errno_addr
+1081af60   __c6xabi_fixfu
+1081b240   __c6xabi_frcmpyd_div
+1081b420   __c6xabi_isinf
+1081afe0   __c6xabi_llshl
+1081b2a0   __c6xabi_llshru
+1081b600   __c6xabi_negll
+1081a440   __c6xabi_remi
+1081a7e0   __c6xabi_remu
+1081b4a0   __c6xabi_strasgi_64plus
+ffffffff   __c_args__
+10819a40   __divi
+1081a380   __divu
+10858e14   __errno
+1081a440   __remi
+1081a7e0   __remu
+1081b4a0   __strasgi_64plus
+1081b4e0   _args_main
+10819580   _auto_init_elf
+10800200   _c_int00
+1081a880   _cleanup
+10858df4   _cleanup_ptr
+10819120   _closefile
+0c0005e0   _ctypes_
+1081a500   _doflush
+10858df8   _dtors_ptr
+10858d5c   _ft_end
+10858a08   _ftable
+10858e0c   _lock
+1081aa60   _minit
+1081b620   _nop
+10814d80   _printfi
+10840000   _stack
+1081b300   _subcull
+10850000   _sys_memory
+10858638   _tmpnams
+10858e10   _unlock
+10819680   _wrt_ok
+1081b680   abort
+10819c00   atoi
+ffffffff   binit
+10859188   capturecheckflag
+10859180   capturecycles
+10859184   capturelost
+10819ce0   close
+10858fcc   colpara
+10858fb0   colpara1
+10819780   copy_in
+10813770   core0_Interrupts_Init
+108590c4   cycle_measure_overhead
+108591d4   cycles
+108591d8   cycles12
+108591dc   cycles13
+1080f1e0   debug_disable_PSC_Power_Domain
+1080f188   debug_disable_PSC_module
+1080f118   debug_enable_PSC_module
+10858ecc   det1st
+10858ed0   det1st1
+10858ed4   det1st2
+10858ee0   det2nd
+10858edc   det3rd
+10858ed8   det3rd1
+1080e380   dsp0_ddr3verify
+1080e348   dsp0_recapturemode
+1080df4c   dsp0_scan6
+1080e2d8   dsp0_scanmode
+1080d8cc   dsp0_targetmerge
+1080e310   dsp0_trackmode
+10859158   dsp0_updateflag
+1085915c   dsp0_updateflag1
+10859174   dspselfcheck
+10859138   em16
+10858e14   errno
+10858928   exception_record
+1081a5c0   exit
+10817f20   fputc
+10815a00   fputs
+10817160   free
+10819360   fseek
+10859008   g10
+1085900c   g12
+10859028   g3
+10858ff0   g4
+10858ffc   g7
+10859000   g8
+10859004   g9
+10858d88   gCIC_EXC_EN_MASK
+108590d0   gCIC_EXC_out_num
+108590d4   gCIC_out_num22
+108590d8   gCIC_out_num24
+108590dc   gCIC_out_num25
+108590e0   gCIC_out_num26
+108590e4   gCIC_out_num27
+108590e8   gCIC_out_num28
+108590ec   gCIC_out_num29
+108590f0   gCIC_out_num30
+108590f4   gCIC_out_num31
+108590c8   gDSP_Core_Speed_Hz
+108589b0   gEmif16Cfg
+10858994   gNorCeCfg
+10858d00   gNorInfo
+1080e424   global_parameters_init
+10859038   gpBootCfgRegs
+10859034   gpCGEM_regs
+1085904c   gpCIC0_regs
+10859050   gpCIC1_regs
+10859054   gpCIC_regs
+108590c0   gpDDR_regs
+10859058   gpEDMA_CC0_regs
+1085905c   gpEDMA_CC1_regs
+10859060   gpEDMA_CC2_regs
+10858de8   gpEDMA_CC_regs
+10859064   gpEDMA_TC_0_0_regs
+10859068   gpEDMA_TC_0_1_regs
+1085906c   gpEDMA_TC_1_0_regs
+10859070   gpEDMA_TC_1_1_regs
+10859074   gpEDMA_TC_1_2_regs
+10859078   gpEDMA_TC_1_3_regs
+1085907c   gpEDMA_TC_2_0_regs
+10859080   gpEDMA_TC_2_1_regs
+10859084   gpEDMA_TC_2_2_regs
+10859088   gpEDMA_TC_2_3_regs
+10858d60   gpEDMA_TC_regs
+10859048   gpGPIO_regs
+10859140   gpHyperLinkRegs
+108590b0   gpMPU0_regs
+108590b4   gpMPU1_regs
+108590b8   gpMPU2_regs
+108590bc   gpMPU3_regs
+10859044   gpMSMC_regs
+1085903c   gpPLLC_regs
+10859040   gpPSC_regs
+10859144   gpSRIO_regs
+1085908c   gpTimer0Regs
+10859090   gpTimer1Regs
+10859094   gpTimer2Regs
+10859098   gpTimer3Regs
+1085909c   gpTimer4Regs
+108590a0   gpTimer5Regs
+108590a4   gpTimer6Regs
+108590a8   gpTimer7Regs
+108590ac   gpTimer8Regs
+10859030   gpXMC_regs
+1085902c   gtrack4
+10859024   gtrackHeight1
+10859020   gtrackWidth1
+108590cc   guwIntcCICExcEvtIdx
+108591e0   hyperLinkSerdesRegs
+1085802c   hyperLink_cfg
+10858da8   iIPCARInfo
+10858dc8   iIPCGRInfo
+1081b700   lock_mem_prot_regs
+1081ac40   lseek
+10819ea0   ltoa
+10858efc   m4threshratio1
+10858f00   m4threshratio2
+10858f04   m4threshratio3
+10858f08   m4threshratio4
+10858f0c   m4threshratio5
+10858f10   m4threshratio5ftr
+108589f0   m_Histogram
+0c009000   m_fDela
+0c008800   m_fLineFcha
+0c008000   m_fLineMean
+108591cc   m_thresh
+108591d0   m_thresh1
+1081b6e0   main
+10818bc0   malloc
+108589e0   mem_prot_key
+1081b360   memccpy
+1081ace0   memcpy
+10819f80   memset
+10859166   modeswitch
+108002c0   msg_send
+108130a0   mss_main
+10858ee4   mthreshratio1
+10858ee8   mthreshratio2
+10858eec   mthreshratio3
+10858ef0   mthreshratio4
+10858ef4   mthreshratio5
+10858ef8   mthreshratio5ftr
+10858f14   mthreshratio6
+10858f18   mthreshratio7
+10858f1c   mthreshratio8
+10858e60   nH_K1
+10858eac   nH_K2
+10858e68   nH_K21
+10858e70   nH_K3
+10858e5c   nW_K1
+10858ea8   nW_K2
+10858e64   nW_K21
+10858e6c   nW_K3
+10858ec4   npixcntlimit
+10858eb0   npixcntlimit1
+10858eb4   npixcntlimit1_1
+10858ec0   npixcntlimit2
+10858ebc   npixcntlimit2_3
+108591c0   npixelcnt
+10858ec8   nthCNTlimit
+10858e94   offsetPixelX3
+10858e9c   offsetPixelX31
+10858e74   offsetPixelX_K1
+10858e98   offsetPixelY3
+10858ea0   offsetPixelY31
+10858e78   offsetPixelY_K1
+108138e4   othercores_Interrupts_Init
+108591c4   para1num1
+10858f34   para1num2
+10858f38   para1num3
+10858f20   para1thresh1
+10858f24   para1thresh2
+10858f28   para1thresh3
+10858f4c   para2num1
+10858f50   para2num2
+10858f54   para2num3
+10858f3c   para2thresh0
+10858f40   para2thresh1
+10858f44   para2thresh2
+10858f48   para2thresh3
+10858f2c   para3n1
+10858f30   para3n2
+108591c8   para3num1
+10858f64   para3num2
+10858f68   para3num3
+10858f58   para3thresh1
+10858f5c   para3thresh2
+10858f60   para3thresh3
+10858f7c   para4num1
+10858f80   para4num2
+10858f84   para4num3
+10858f6c   para4thresh0
+10858f70   para4thresh1
+10858f74   para4thresh2
+10858f78   para4thresh3
+10858fa0   para5add1
+10858fa4   para5num1
+10858fa8   para5num2
+10858fac   para5num3
+10858f88   para5th1
+10858f8c   para5th2
+10858f90   para5thresh0
+10858f94   para5thresh1
+10858f98   para5thresh2
+10858f9c   para5thresh3
+10858eb8   pixlimit
+10858438   pretrackInfo
+1081a060   printf
+0c00b800   pseuobject
+0c009800   pseuobject2
+1081b5a0   puts
+1081b0e0   readmsg
+1081b160   remove
+10858fd0   rowpara
+10858fb2   rowpara1
+10858fc4   rtxnumber
+10858fc8   rtxnumberref
+10858000   serdeshyperLinkSetup
+10818340   setvbuf
+10818d40   sqrt
+108591e4   tarNUM
+0c25c738   targetTemp
+0c25d3b8   targetTemp1
+108591ec   targetempty
+10858ff4   targetnum
+10858ff8   targetnumref
+108585d8   temptrackInfo
+108591b8   temptrackflag
+10858778   testBuf
+108587f8   testReadBuf
+10858d18   test_2DSP_cfg
+10858598   track1Info
+108591b0   track1flag
+108585b8   track2Info
+108591b4   track2flag
+10858418   trackInfo
+108591ac   trackcnt
+108591a4   tracklostNum
+108591a0   tracklostflag
+108591a8   tracklostmax
+10858458   trackseq
+10858e18   uiDataPatternTable
+10859130   uiFailCount0
+10859134   uiFailCount1
+10859148   uiXadd
+10859154   uiXadd1
+1085914c   uiXaddlast
+1085914a   uiYadd
+10859156   uiYadd1
+1085914e   uiYaddlast
+1081b160   unlink
+1081b7c8   unlock_mem_prot_regs
+10800000   vectors
+1081aec0   write
+1081b3c0   writemsg
+1085901e   xmaxref
+1085901c   xref
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00008000   __TI_SYSMEM_SIZE
+00010000   __TI_STACK_SIZE
+0c0005e0   _ctypes_
+0c000c68   __TI_Handler_Table_Base
+0c000c74   __TI_Handler_Table_Limit
+0c000c94   __TI_CINIT_Base
+0c000ccc   __TI_CINIT_Limit
+0c008000   m_fLineMean
+0c008800   m_fLineFcha
+0c009000   m_fDela
+0c009800   pseuobject2
+0c00b800   pseuobject
+0c040000   ImageData_5
+0c0e0000   ImageDataTemp1_5
+0c180000   ImageDataTemp2_5
+0c220000   Hist
+0c230000   Hist_a
+0c240000   Hist_b
+0c250000   Mark4Con
+0c25bb80   Mark4
+0c25c738   targetTemp
+0c25d3b8   targetTemp1
+0c25e038   ScanCheck5
+0c25e2b8   ScanCheck5last
+0c25e538   Scan5record
+0c266238   Scan5error
+0c26df38   Scan5error1
+0c2e0000   SemaphoreSyncMark
+10800000   vectors
+10800200   _c_int00
+108002c0   msg_send
+108002e8   FPGA_EMIF16_RTX1
+10801150   FPGA_EMIF16_RTX
+10801df8   FPGA_EMIF16_RTX2
+10802084   Pre_DataMove
+108021ec   OBJ_Detect1st
+10803254   OBJ_Detect1stmax
+10804344   OBJ_Detect1stmaxv1
+10805424   OBJ_Detect1stmaxv1rev
+10806510   OBJ_Detect1stmaxv2
+10807250   OBJ_Detect1stmaxv3
+108080d0   OBJ_Detect1stmaxv4
+10808fa4   OBJ_Detect1stmaxv5
+10809dc4   Pre_DataMove2
+10809eac   OBJ_Detect2ndOut
+1080a234   OBJ_Detect2nd
+1080a7e4   OBJ_Detect2nd1
+1080ae60   OBJ_Detect2nd2
+1080b444   OBJ_Detect2nd3
+1080bc80   OBJ_Detect2nd4
+1080c598   OBJ_Synthesis
+1080d8cc   dsp0_targetmerge
+1080df4c   dsp0_scan6
+1080e2d8   dsp0_scanmode
+1080e310   dsp0_trackmode
+1080e348   dsp0_recapturemode
+1080e380   dsp0_ddr3verify
+1080e424   global_parameters_init
+1080e488   DSP0_image
+1080ea54   Core_PLL_init
+1080ed98   PLL_init
+1080eeb4   KeyStone_PASS_PLL_init
+1080ef44   DDR_PLL_init
+1080efd0   TSC_init
+1080efe0   TSC_delay_ms
+1080f078   TSC_delay_us
+1080f118   debug_enable_PSC_module
+1080f188   debug_disable_PSC_module
+1080f1e0   debug_disable_PSC_Power_Domain
+1080f224   EDMA_init
+1080f788   EDMA_copy_Type3
+1080f924   IDMA_copy
+1080f9c0   L1_MPPA_setup
+1080fa64   L1P_memory_protection_cfg
+1080faf4   L1D_memory_protection_cfg
+1080fb88   L1_cache_protection
+1080fb98   LL2_MPPA_setup
+1080fc34   KeyStone_SL2_EDC_enable
+1080fcf0   LL2_EDC_setup
+1080fd84   L1P_EDC_setup
+1080fe00   KeyStone_CIC_exception_events_mapping
+108100b4   KeyStone_Exception_cfg
+108102e0   IPC_ACT_ISR
+10810868   SRIO_Doorbell_ISR
+10810d30   HyperLinkISR
+10810f34   GPIO_ISR
+108113a4   KeyStone_HyperLink_Interrupt_init
+1081154c   KeyStone_HyperLink_Addr_Map
+10811640   KeyStone_HyperLink_Init
+108117e4   Hyperlink_config
+10811ba0   HyperLink_Interrupt_Test
+10811bf0   HyperLink_TX2_DSP1
+10811c98   HyperLink_Int_Handle
+10811de8   HyperLink_init
+10811e68   Serdes_PLL_config
+10812064   SRIO_Serdes_init
+10812300   KeyStone_HyperLink_Serdes_init
+108125a8   Serdes_disable
+108126d0   DSP0_GPIO_init
+10812708   EMIF_init
+108127d0   NOR_init
+10812818   NOR_writeBytes
+108129f0   NOR_FLASH_write_block
+10812a30   FLASH_MEM_FillTest
+10812af0   FLASH_MEM_Test
+10812bcc   NOR_FLASH_test
+10812c34   GPIO_FPGA_Handshake
+10812c58   SRIO_FPGA_Handshake
+10812ca4   Interface_test
+10813044   MulticoreBoot
+108130a0   mss_main
+10813754   GPIO_Interrupts_Init
+10813770   core0_Interrupts_Init
+108138e4   othercores_Interrupts_Init
+10813900   __c6xabi_divd
+10814480   DDR3_registers_adress_map
+108144f4   DDR_Config_Init
+10814898   DDR_init
+10814920   Pre_BKForecast
+10814d80   _printfi
+10815640   EMIF16_init
+10815a00   fputs
+10815da0   Exception_service_routine
+108169e0   Pre_IntermFilter
+10816c60   __c6xabi_divf
+10817160   free
+108173e0   Pre_Hist
+10817540   GetMaxValue
+108175b8   GetMinValue
+10817640   __c6xabi_divull
+10817f20   fputc
+10818340   setvbuf
+10818700   HOSTrename
+108188a0   __c6xabi_divul
+10818bc0   malloc
+10818d40   sqrt
+10819120   _closefile
+10819360   fseek
+10819480   HOSTlseek
+10819580   _auto_init_elf
+10819680   _wrt_ok
+10819780   copy_in
+10819880   AcquireData5
+10819960   HOSTopen
+10819a40   __c6xabi_divi
+10819a40   __divi
+10819c00   atoi
+10819ce0   close
+10819dc0   __TI_zero_init
+10819ea0   ltoa
+10819f80   memset
+1081a060   printf
+1081a140   HOSTread
+1081a200   HOSTunlink
+1081a2c0   HOSTwrite
+1081a380   __c6xabi_divu
+1081a380   __divu
+1081a440   __c6xabi_remi
+1081a440   __remi
+1081a500   _doflush
+1081a5c0   exit
+1081a680   __TI_tls_init
+1081a740   HOSTclose
+1081a7e0   __c6xabi_remu
+1081a7e0   __remu
+1081a880   _cleanup
+1081aa60   _minit
+1081ac40   lseek
+1081ace0   memcpy
+1081aec0   write
+1081af60   __c6xabi_fixfu
+1081afe0   __c6xabi_llshl
+1081b060   Core0_Image
+1081b0e0   readmsg
+1081b160   remove
+1081b160   unlink
+1081b1e0   __TI_cpp_init
+1081b240   __c6xabi_frcmpyd_div
+1081b2a0   __c6xabi_llshru
+1081b300   _subcull
+1081b360   memccpy
+1081b3c0   writemsg
+1081b418   C$$IO$$
+1081b420   __c6xabi_isinf
+1081b4a0   __c6xabi_strasgi_64plus
+1081b4a0   __strasgi_64plus
+1081b4e0   _args_main
+1081b520   MSU_Image
+1081b5a0   puts
+1081b5e0   __c6xabi_errno_addr
+1081b600   __c6xabi_negll
+1081b620   _nop
+1081b680   C$$EXIT
+1081b680   abort
+1081b6a0   __TI_decompress_none
+1081b6c0   __TI_decompress_rle24
+1081b6e0   main
+1081b700   lock_mem_prot_regs
+1081b7c8   unlock_mem_prot_regs
+1081b890   MPAX_seg_setup
+1081ba34   XMC_MPAX_setup
+10840000   _stack
+10850000   __TI_STACK_END
+10850000   _sys_memory
+10858000   serdeshyperLinkSetup
+1085802c   hyperLink_cfg
+10858418   trackInfo
+10858438   pretrackInfo
+10858458   trackseq
+10858598   track1Info
+108585b8   track2Info
+108585d8   temptrackInfo
+108585f8   FPGACheck
+10858618   FPGAChecklast
+10858638   _tmpnams
+10858778   testBuf
+108587f8   testReadBuf
+10858878   XMC_MPAX_cfg_table_C6678_319
+10858928   exception_record
+10858994   gNorCeCfg
+108589b0   gEmif16Cfg
+108589d0   DDR_REGS_MPAX_cfg_table_319
+108589e0   mem_prot_key
+108589f0   m_Histogram
+10858a08   _ftable
+10858d00   gNorInfo
+10858d18   test_2DSP_cfg
+10858d5c   _ft_end
+10858d60   gpEDMA_TC_regs
+10858d88   gCIC_EXC_EN_MASK
+10858da8   iIPCARInfo
+10858dc8   iIPCGRInfo
+10858de8   gpEDMA_CC_regs
+10858df4   _cleanup_ptr
+10858df8   _dtors_ptr
+10858dfc   __TI_enable_exit_profile_output
+10858e0c   _lock
+10858e10   _unlock
+10858e14   __errno
+10858e14   errno
+10858e18   uiDataPatternTable
+10858e20   Kconstant
+10858e20   __TI_STATIC_BASE
+10858e24   KKK
+10858e28   K4_scan
+10858e2c   K4_track
+10858e30   K4_scan1
+10858e34   K4_scan1con
+10858e38   MultiM2
+10858e3c   Multiply1
+10858e40   Multiply2
+10858e44   K1st_Mean
+10858e48   K1st_Fcha
+10858e4c   TotalMean
+10858e50   TotalFcha
+10858e54   K1st_Mean1
+10858e58   K1st_Fcha1
+10858e5c   nW_K1
+10858e60   nH_K1
+10858e64   nW_K21
+10858e68   nH_K21
+10858e6c   nW_K3
+10858e70   nH_K3
+10858e74   offsetPixelX_K1
+10858e78   offsetPixelY_K1
+10858e7c   K1_Mean
+10858e80   K1_Fcha
+10858e84   K1_Compensate1
+10858e88   K2_Fcha
+10858e8c   K1_Mean4
+10858e90   K1_Fcha4
+10858e94   offsetPixelX3
+10858e98   offsetPixelY3
+10858e9c   offsetPixelX31
+10858ea0   offsetPixelY31
+10858ea4   K1_Compensate3
+10858ea8   nW_K2
+10858eac   nH_K2
+10858eb0   npixcntlimit1
+10858eb4   npixcntlimit1_1
+10858eb8   pixlimit
+10858ebc   npixcntlimit2_3
+10858ec0   npixcntlimit2
+10858ec4   npixcntlimit
+10858ec8   nthCNTlimit
+10858ecc   det1st
+10858ed0   det1st1
+10858ed4   det1st2
+10858ed8   det3rd1
+10858edc   det3rd
+10858ee0   det2nd
+10858ee4   mthreshratio1
+10858ee8   mthreshratio2
+10858eec   mthreshratio3
+10858ef0   mthreshratio4
+10858ef4   mthreshratio5
+10858ef8   mthreshratio5ftr
+10858efc   m4threshratio1
+10858f00   m4threshratio2
+10858f04   m4threshratio3
+10858f08   m4threshratio4
+10858f0c   m4threshratio5
+10858f10   m4threshratio5ftr
+10858f14   mthreshratio6
+10858f18   mthreshratio7
+10858f1c   mthreshratio8
+10858f20   para1thresh1
+10858f24   para1thresh2
+10858f28   para1thresh3
+10858f2c   para3n1
+10858f30   para3n2
+10858f34   para1num2
+10858f38   para1num3
+10858f3c   para2thresh0
+10858f40   para2thresh1
+10858f44   para2thresh2
+10858f48   para2thresh3
+10858f4c   para2num1
+10858f50   para2num2
+10858f54   para2num3
+10858f58   para3thresh1
+10858f5c   para3thresh2
+10858f60   para3thresh3
+10858f64   para3num2
+10858f68   para3num3
+10858f6c   para4thresh0
+10858f70   para4thresh1
+10858f74   para4thresh2
+10858f78   para4thresh3
+10858f7c   para4num1
+10858f80   para4num2
+10858f84   para4num3
+10858f88   para5th1
+10858f8c   para5th2
+10858f90   para5thresh0
+10858f94   para5thresh1
+10858f98   para5thresh2
+10858f9c   para5thresh3
+10858fa0   para5add1
+10858fa4   para5num1
+10858fa8   para5num2
+10858fac   para5num3
+10858fb0   colpara1
+10858fb2   rowpara1
+10858fb4   RXanglelast
+10858fb8   RYanglelast
+10858fbc   RXanglelast1
+10858fc0   RYanglelast1
+10858fc4   rtxnumber
+10858fc8   rtxnumberref
+10858fcc   colpara
+10858fd0   rowpara
+10858fd4   RXanglelcnt
+10858fd8   RXanglercnt
+10858fdc   RYangletcnt
+10858fe0   RYanglebcnt
+10858fe4   RXcenter
+10858fe8   RYcenter
+10858fec   Rposition
+10858ff0   g4
+10858ff4   targetnum
+10858ff8   targetnumref
+10858ffc   g7
+10859000   g8
+10859004   g9
+10859008   g10
+1085900c   g12
+10859010   Scan5errornum
+10859014   Scan5errornum1
+10859018   Scan5errorcnt
+1085901c   xref
+1085901e   xmaxref
+10859020   gtrackWidth1
+10859024   gtrackHeight1
+10859028   g3
+1085902c   gtrack4
+10859030   gpXMC_regs
+10859034   gpCGEM_regs
+10859038   gpBootCfgRegs
+1085903c   gpPLLC_regs
+10859040   gpPSC_regs
+10859044   gpMSMC_regs
+10859048   gpGPIO_regs
+1085904c   gpCIC0_regs
+10859050   gpCIC1_regs
+10859054   gpCIC_regs
+10859058   gpEDMA_CC0_regs
+1085905c   gpEDMA_CC1_regs
+10859060   gpEDMA_CC2_regs
+10859064   gpEDMA_TC_0_0_regs
+10859068   gpEDMA_TC_0_1_regs
+1085906c   gpEDMA_TC_1_0_regs
+10859070   gpEDMA_TC_1_1_regs
+10859074   gpEDMA_TC_1_2_regs
+10859078   gpEDMA_TC_1_3_regs
+1085907c   gpEDMA_TC_2_0_regs
+10859080   gpEDMA_TC_2_1_regs
+10859084   gpEDMA_TC_2_2_regs
+10859088   gpEDMA_TC_2_3_regs
+1085908c   gpTimer0Regs
+10859090   gpTimer1Regs
+10859094   gpTimer2Regs
+10859098   gpTimer3Regs
+1085909c   gpTimer4Regs
+108590a0   gpTimer5Regs
+108590a4   gpTimer6Regs
+108590a8   gpTimer7Regs
+108590ac   gpTimer8Regs
+108590b0   gpMPU0_regs
+108590b4   gpMPU1_regs
+108590b8   gpMPU2_regs
+108590bc   gpMPU3_regs
+108590c0   gpDDR_regs
+108590c4   cycle_measure_overhead
+108590c8   gDSP_Core_Speed_Hz
+108590cc   guwIntcCICExcEvtIdx
+108590d0   gCIC_EXC_out_num
+108590d4   gCIC_out_num22
+108590d8   gCIC_out_num24
+108590dc   gCIC_out_num25
+108590e0   gCIC_out_num26
+108590e4   gCIC_out_num27
+108590e8   gCIC_out_num28
+108590ec   gCIC_out_num29
+108590f0   gCIC_out_num30
+108590f4   gCIC_out_num31
+108590f8   DoorbellNum
+108590fc   DoorbellNum1
+10859100   DoorbellNum2
+10859104   DoorbellNum3
+10859108   DoorbellNum4
+1085910c   GPIO_NUM0
+10859110   GPIO_NUM1
+10859114   GPIO_NUM2
+10859118   GPIO_NUM3
+1085911c   GPIO_NUM4
+10859120   GPIO_NUM5
+10859124   SRIO_temperatureflag1
+10859125   SRIO_temperatureflag2
+10859126   DDR3_temperatureflag1
+10859127   SRIOflag1
+10859128   SRIOflag2
+10859129   DDR3_temperatureflag
+1085912a   GPIO_temperatureflag
+1085912c   SRIO_nodoorbellcount
+10859130   uiFailCount0
+10859134   uiFailCount1
+10859138   em16
+1085913c   EMIF16_Regs
+10859140   gpHyperLinkRegs
+10859144   gpSRIO_regs
+10859148   uiXadd
+1085914a   uiYadd
+1085914c   uiXaddlast
+1085914e   uiYaddlast
+10859150   ScanCheck5Num
+10859152   ScanCheck5lastNum
+10859154   uiXadd1
+10859156   uiYadd1
+10859158   dsp0_updateflag
+1085915c   dsp0_updateflag1
+10859160   Debug_WorkMode
+10859164   CommandMode
+10859166   modeswitch
+10859168   RxFrameFlag
+1085916c   WorkMode
+10859170   SmallFlag
+10859174   dspselfcheck
+10859178   CheckCycles
+1085917c   ScanCheckflag
+10859180   capturecycles
+10859184   capturelost
+10859188   capturecheckflag
+1085918c   TrackMethod
+10859190   TrackM1
+10859194   TrackM2
+10859198   TrackM2Flag
+1085919c   TrackM3
+108591a0   tracklostflag
+108591a4   tracklostNum
+108591a8   tracklostmax
+108591ac   trackcnt
+108591b0   track1flag
+108591b4   track2flag
+108591b8   temptrackflag
+108591bc   TempCorRmax
+108591c0   npixelcnt
+108591c4   para1num1
+108591c8   para3num1
+108591cc   m_thresh
+108591d0   m_thresh1
+108591d4   cycles
+108591d8   cycles12
+108591dc   cycles13
+108591e0   hyperLinkSerdesRegs
+108591e4   tarNUM
+108591ec   targetempty
+108591f0   __CIOBUF_
+ffffffff   __TI_pprof_out_hndl
+ffffffff   __TI_prof_data_size
+ffffffff   __TI_prof_data_start
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    __TI_INITARRAY_Base
+UNDEFED    __TI_INITARRAY_Limit
+UNDEFED    __TI_TLS_INIT_Base
+UNDEFED    __TI_TLS_INIT_Limit
+
+[509 symbols]
