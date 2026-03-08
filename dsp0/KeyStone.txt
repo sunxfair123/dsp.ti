@@ -1,1 +1,104 @@
+/****************************************************************************/
+/*  文件为工程项目的原始.cmd文件                                            */
+/****************************************************************************/
+-heap  0x8000
+-stack 0x10000
+
+MEMORY
+{
+        /* Local L2, 0.5~1MB*/
+        VECTORS:              o = 0x00800000  l = 0x00000200   
+        LL2_CODE:             o = 0x00800200  l = 0x0001FE00
+        LL2_DATA:             o = 0x00820000  l = 0x00060000
+    
+        /* Shared L2 2~4MB*/
+        SL2_CODE:             o = 0x0C000000  l = 0x00100000    /* 1MB SL2 */
+        SL2_DATA:             o = 0x0C100000  l = 0x00200000    /* 2MB SL2 */
+        //remap 1MB SL2 from 0x0C380000 to 0x18000000,对应修改代码中的XMC_MPAX_cfg_table_C6678
+        SL2_REMAP:            o = 0x18000000  l = 0x00100000
+    
+        /* External DDR3, upto 2GB per core */
+        /*delete by sxf 20160108 */
+        /*目前不需要 */
+        //DDR3_CODE:            o = 0x80000000  l = 0x01000000
+        //DDR3_DATA:            o = 0x81000000  l = 0x05000000
+        //DDR3_Profile_DATA:    o = 0x86000000  l = 0x02000000
+        
+        /*delete by sxf 20160108 */
+        //DDR3_ECC_DATA:        o = 0x88000000  l = 0x01000000
+        
+        
+        /*add by sxf 20151208 CORE0 DDR for transfer data */
+        //CORE0_DDR3_QMSS:      o = 0x80000000 l = 0x10000000   /* 256MB DDR3 SDRAM for CORE0 */
+        CORE0_DDR3:             o = 0x90000000 l = 0x10000000   /* 256MB DDR3 SDRAM for CORE0 */
+}
+
+SECTIONS
+{
+        vecs                            > VECTORS 
+        .text                           > LL2_CODE
+        .text:Core_MPAX                 > LL2_CODE        
+        
+        .cinit                          > SL2_DATA
+        .const                          > SL2_DATA
+        .switch                         > SL2_DATA
+    
+        .stack: fill= 0xBFBFBFBF        > LL2_DATA
+        GROUP
+        {
+            .neardata
+            .rodata
+            .bss
+        }                               > LL2_DATA
+        .far                            > LL2_DATA
+        .fardata                        > LL2_DATA
+        .cio                            > LL2_DATA
+        .sysmem                         > LL2_DATA
+                                        
+        
+        
+        
+        /*delete by sxf 20160108 */
+        //ll2EDCCode                      > LL2_CODE
+        //ll2EDCData                      > LL2_DATA
+        //ll2MPData                       > LL2_DATA
+    
+        //Sl2EDCCode                      > SL2_CODE
+        
+        /*delete by sxf 20160108 */
+        //Sl2EDCData                      > SL2_DATA
+        
+        /*delete by sxf 20160108 */
+        //sl2MPData_w                     > SL2_DATA
+        //sl2MPData_r                     > SL2_DATA        
+        
+        /*delete by sxf 20160108 */
+        //QMSS_Data.Descriptor_SL2        > SL2_DATA
+        //PacketData.buffer_SL2           > SL2_DATA
+    
+        /*delete by sxf 20160108 */
+        //ddr3MPData_w                    > DDR3_DATA
+        //ddr3MPData_r                    > DDR3_DATA
+        
+        /*delete by sxf 20160108 */
+        //msmcSesMPData_w                 > DDR3_DATA
+        //msmcSesMPData_r                 > DDR3_DATA
+        
+        /*delete by sxf 20160108 */
+        /*目前不需要 */
+        //ETBLib_dmaData                  > DDR3_DATA
+        
+        /*delete by sxf 20160108 */
+        /*目前不需要 */
+        //.far:External_NonCache_Data     > DDR3_Profile_DATA
+        
+        /*delete by sxf 20160108 */
+        //DDRECCData                      > DDR3_ECC_DATA
+        
+        
+        DDR3Core0Dst_rw					        > CORE0_DDR3
+        QMSS_Data.Core0_Descriptor_DDR  > CORE0_DDR3
+        PacketData.Core0_buffer_DDR 		> CORE0_DDR3
+}
+
 
