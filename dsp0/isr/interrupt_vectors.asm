@@ -1,0 +1,118 @@
+;create interrupt vector table for C6000 DSP
+;--------------------------------------------------------------
+;This file can be modified to add Interrupt Service Routine(ISR) 
+;for an interrupt, the steps are:
+;1,reference to the externally defined ISR, for example
+;	.ref EDMA_ISR
+;2,modify the corresponding entry in the interrupt vector table.
+;  For example, if interrupt 8 is used for EDMA, then you should
+;  modify the entry number 8 like below:
+;	VEC_ENTRY EDMA_ISR     	;interrupt 8 
+;--------------------------------------------------------------
+;Author: 
+;Created on 2017-2-13
+;Updated : add NMI_ISR
+;--------------------------------------------------------------
+
+;reference to the externally defined ISR
+	.ref _c_int00
+	.ref Exception_service_routine
+;.ref Nested_Exception_service_routine
+;.ref LL2_EDC_ISR
+;.ref SL2_EDC_ISR
+	.ref IPC_ACT_ISR
+	.ref SRIO_Doorbell_ISR
+	.ref HyperLinkISR
+	.ref GPIO_ISR
+;.ref UART_Rx_ISR
+	.ref exception_record
+	
+;.ref CORE0_SOURCE
+	.ref CORE1_SOURCE
+;.ref CORE2_SOURCE
+	.global vectors 
+
+;--------------------------------------------------------------
+	.sect ".text"
+;interrupt vector for NMI
+NMI_ISR:
+	STW 	B1,*-B15[1]
+
+	;save some key registers when exception happens
+	MVKL  exception_record,B1
+	MVKH  exception_record,B1
+
+	STW 	B3, *+B1[0]
+	STW 	A4, *+B1[1]
+	STW 	B4, *+B1[2]
+	STW 	B14, *+B1[3]
+	STW 	B15, *+B1[4]
+	
+	;jump to exception service routine
+	MVKL  	Exception_service_routine, B1
+	MVKH  	Exception_service_routine, B1
+	B 	B1
+
+	LDW 	*-B15[1],B1
+	NOP 	4
+
+;--------------------------------------------------------------
+;create interrupt vector for reset (interrupt 0)
+VEC_RESET .macro addr
+	MVKL  addr,B0
+	MVKH  addr,B0
+	B     B0
+	MVC   PCE1,B0
+	NOP   4
+	.align 32
+	.endm
+
+;create interrupt vector for other used interrupts	
+VEC_ENTRY .macro addr
+	STW   B0,*--B15
+	MVKL  addr,B0
+	MVKH  addr,B0
+	B     B0
+	LDW   *B15++,B0
+	NOP   4
+	.align 32
+	.endm
+
+;create interrupt vector for unused interrupts	
+VEC_DUMMY .macro
+unused_int?:
+	B    unused_int? ;dead loop for unused interrupts
+	NOP  5
+	.align 32
+	.endm
+	
+;--------------------------------------------------------------
+;interrupt vector table	
+	.sect "vecs"
+	.align 1024
+	
+	
+vectors:
+	;VEC_ENTRY Nested_Exception_service_routine     		;RESET 
+	VEC_RESET _c_int00     		;RESET 
+	;VEC_ENTRY Exception_service_routine	;NMI/Exception
+	VEC_ENTRY NMI_ISR	;NMI/Exception
+	
+	VEC_DUMMY   		;RSVD
+	VEC_DUMMY   		;RSVD
+	VEC_DUMMY   		;interrupt 4
+	VEC_ENTRY IPC_ACT_ISR         ;interrupt 5
+	VEC_ENTRY SRIO_Doorbell_ISR   ;interrupt 6
+	VEC_ENTRY HyperLinkISR 		;interrupt 7
+	VEC_DUMMY     		;interrupt 8 
+	VEC_DUMMY   		;interrupt 9
+	VEC_DUMMY   		;interrupt 10
+	;VEC_ENTRY UART_Rx_ISR   		;interrupt 10
+	VEC_DUMMY   		;interrupt 11
+	VEC_DUMMY   		;interrupt 12
+	VEC_DUMMY                 ;interrupt 13:watchdog
+	VEC_DUMMY       ;interrupt 14
+	VEC_ENTRY GPIO_ISR   	    ;interrupt 15		
+
+	.end
+	
